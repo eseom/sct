@@ -1,21 +1,18 @@
-//
-//  AppDelegate.swift
-//  sct
-//
-//  Created by EunseokEom on 6/27/15.
-//  Copyright (c) 2015 EunseokEom. All rights reserved.
-//
-
 import Cocoa
 
-@NSApplicationMain
+// @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
 
+    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1) // NSVariableStatusItemLength
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        let icon = NSImage(named: "statusicon_default")
+        icon?.template = true
+        self.statusItem.image = icon
+        
+        HotKey.registerHotKey()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -24,4 +21,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
 }
-

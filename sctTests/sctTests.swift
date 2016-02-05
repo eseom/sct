@@ -1,11 +1,3 @@
-//
-//  sctTests.swift
-//  sctTests
-//
-//  Created by EunseokEom on 6/27/15.
-//  Copyright (c) 2015 EunseokEom. All rights reserved.
-//
-
 import Cocoa
 import XCTest
 

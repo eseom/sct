@@ -13,6 +13,7 @@
 		9152D9531B3EE4F000BA68B2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9152D9521B3EE4F000BA68B2 /* main.swift */; };
 		9152D9561B3EE7AA00BA68B2 /* hotkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 9152D9551B3EE7AA00BA68B2 /* hotkey.m */; };
 		9152D9581B3EE93600BA68B2 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9152D9571B3EE93600BA68B2 /* images.xcassets */; };
+		918654A61C64A843007710D5 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 918654A51C64A843007710D5 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		9152D9551B3EE7AA00BA68B2 /* hotkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hotkey.m; sourceTree = "<group>"; };
 		9152D9571B3EE93600BA68B2 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		9152D9591B3EEA2600BA68B2 /* hotkey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = hotkey.h; path = ../hotkey.h; sourceTree = "<group>"; };
+		918654A51C64A843007710D5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		9152D9291B3EE42100BA68B2 = {
 			isa = PBXGroup;
 			children = (
+				918654A51C64A843007710D5 /* README.md */,
 				9152D9571B3EE93600BA68B2 /* images.xcassets */,
 				9152D9341B3EE42100BA68B2 /* sct */,
 				9152D9451B3EE42100BA68B2 /* sctTests */,
@@ -219,6 +222,7 @@
 			files = (
 				9152D9531B3EE4F000BA68B2 /* main.swift in Sources */,
 				9152D9381B3EE42100BA68B2 /* AppDelegate.swift in Sources */,
+				918654A61C64A843007710D5 /* README.md in Sources */,
 				9152D9561B3EE7AA00BA68B2 /* hotkey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

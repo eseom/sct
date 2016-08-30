@@ -2,7 +2,7 @@
 
 @implementation HotKey
 
-EventHotKeyRef hotKeyRef;
+EventHotKeyRef HotKeyRef;
 
 + (void)registerHotKey
 {
@@ -13,8 +13,8 @@ EventHotKeyRef hotKeyRef;
     eventType.eventClass = kEventClassKeyboard;
     eventType.eventKind = kEventHotKeyPressed;
     InstallApplicationEventHandler(&hotKeyHandler, 1, &eventType, NULL, NULL);
-    hotKeyId.signature = 'eeee';
-    hotKeyId.id = 0;
+    hotKeyId.signature = 'sct1';
+    hotKeyId.id = 1;
     keycode = 39;
     hotKeyModifiers = optionKey;
     RegisterEventHotKey(keycode,
@@ -22,13 +22,36 @@ EventHotKeyRef hotKeyRef;
                         hotKeyId,
                         GetApplicationEventTarget(),
                         0,
-                        &hotKeyRef);
-    // [[AllkdicManager sharedInstance] open];
+                        &HotKeyRef);
+    hotKeyId.signature = 'sct2';
+    hotKeyId.id = 2;
+    keycode = 41;
+    hotKeyModifiers = optionKey;
+    RegisterEventHotKey(keycode,
+                        hotKeyModifiers,
+                        hotKeyId,
+                        GetApplicationEventTarget(),
+                        0,
+                        &HotKeyRef);
+    
+    
 }
 
 + (void)unregisterHotKey
 {
-    UnregisterEventHotKey(hotKeyRef);
+    UnregisterEventHotKey(HotKeyRef);
+}
+
+
+void newSafari() {
+    NSAppleScript* safari = [[NSAppleScript alloc] initWithSource:
+                               [NSString stringWithFormat:
+                                @"do shell script \"open -a Safari\"\n"
+                                @"tell application \"Safari\"\n"
+                                @"do Javascript \"javascript:void(window.open('http://bbc.co.uk'))\" in document 1\n"
+                                @"end tell"]];
+    
+    [safari executeAndReturnError:nil];
 }
 
 void newTerminal() {
@@ -55,7 +78,19 @@ void newTerminal() {
 #pragma mark HotKey
 
 OSStatus hotKeyHandler(EventHandlerCallRef nextHandler, EventRef theEvent, void *userData) {
-    newTerminal();
+    EventHotKeyID sctCom;
+    GetEventParameter(theEvent, kEventParamDirectObject, typeEventHotKeyID, NULL, sizeof(sctCom), NULL, &sctCom);
+    int l = sctCom.id;
+    switch (l) {
+        case 1:
+            newTerminal();
+            break;
+        case 2:
+            newSafari();
+            break;
+        default:
+            break;
+    }
     return noErr;
 }
 

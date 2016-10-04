@@ -5,17 +5,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
 
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1) // NSVariableStatusItemLength
+    let statusItem = NSStatusBar.system().statusItem(withLength: -1) // NSVariableStatusItemLength
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         let icon = NSImage(named: "statusicon_default")
-        icon?.template = true
+        icon?.isTemplate = true
         self.statusItem.image = icon
         
-        HotKey.registerHotKey()
+        HotKey.register()
+        Mouse.register()
+//        Window.register()
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your applicationæ
     }
 

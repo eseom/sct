@@ -33,15 +33,13 @@ EventHotKeyRef HotKeyRef;
                         GetApplicationEventTarget(),
                         0,
                         &HotKeyRef);
-    
-    
+
 }
 
 + (void)unregisterHotKey
 {
     UnregisterEventHotKey(HotKeyRef);
 }
-
 
 void newSafari() {
     NSAppleScript* safari = [[NSAppleScript alloc] initWithSource:
@@ -73,6 +71,7 @@ void newTerminal() {
     
     [terminal executeAndReturnError:nil];
 }
+
 
 #pragma mark -
 #pragma mark HotKey

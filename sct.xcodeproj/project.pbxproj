@@ -14,6 +14,8 @@
 		9152D9561B3EE7AA00BA68B2 /* hotkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 9152D9551B3EE7AA00BA68B2 /* hotkey.m */; };
 		9152D9581B3EE93600BA68B2 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9152D9571B3EE93600BA68B2 /* images.xcassets */; };
 		918654A61C64A843007710D5 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 918654A51C64A843007710D5 /* README.md */; };
+		9DCEDAD61DA3483500E557D6 /* mouse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEDAD51DA3483500E557D6 /* mouse.m */; };
+		9DCEDAD91DA34D2700E557D6 /* window.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEDAD81DA34D2700E557D6 /* window.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		9152D9571B3EE93600BA68B2 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		9152D9591B3EEA2600BA68B2 /* hotkey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = hotkey.h; path = ../hotkey.h; sourceTree = "<group>"; };
 		918654A51C64A843007710D5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9DCEDAD41DA3483500E557D6 /* mouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mouse.h; sourceTree = "<group>"; };
+		9DCEDAD51DA3483500E557D6 /* mouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mouse.m; sourceTree = "<group>"; };
+		9DCEDAD71DA34D2700E557D6 /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
+		9DCEDAD81DA34D2700E557D6 /* window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = window.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,10 @@
 				9152D9351B3EE42100BA68B2 /* Supporting Files */,
 				9152D9551B3EE7AA00BA68B2 /* hotkey.m */,
 				9152D9541B3EE7A900BA68B2 /* sct-Bridging-Header.h */,
+				9DCEDAD41DA3483500E557D6 /* mouse.h */,
+				9DCEDAD51DA3483500E557D6 /* mouse.m */,
+				9DCEDAD71DA34D2700E557D6 /* window.h */,
+				9DCEDAD81DA34D2700E557D6 /* window.m */,
 			);
 			path = sct;
 			sourceTree = "<group>";
@@ -170,9 +180,11 @@
 				TargetAttributes = {
 					9152D9311B3EE42100BA68B2 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0800;
 					};
 					9152D9411B3EE42100BA68B2 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = 9152D9311B3EE42100BA68B2;
 					};
 				};
@@ -220,10 +232,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DCEDAD61DA3483500E557D6 /* mouse.m in Sources */,
 				9152D9531B3EE4F000BA68B2 /* main.swift in Sources */,
 				9152D9381B3EE42100BA68B2 /* AppDelegate.swift in Sources */,
 				918654A61C64A843007710D5 /* README.md in Sources */,
 				9152D9561B3EE7AA00BA68B2 /* hotkey.m in Sources */,
+				9DCEDAD91DA34D2700E557D6 /* window.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +353,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "sct/sct-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -353,6 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.eseom.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "sct/sct-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -373,6 +389,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.eseom.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sct.app/Contents/MacOS/sct";
 			};
 			name = Debug;
@@ -390,6 +407,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.eseom.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sct.app/Contents/MacOS/sct";
 			};
 			name = Release;
